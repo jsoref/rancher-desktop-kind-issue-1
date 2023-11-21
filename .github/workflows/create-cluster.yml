@@ -1,0 +1,14 @@
+name: Create Cluster
+
+on: pull_request
+
+jobs:
+  create-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create k8s Kind Cluster
+        uses: helm/kind-action@v1.8.0
+        with:
+          config:
+          cluster_name: testing
+          kubectl_version: v1.27.7
